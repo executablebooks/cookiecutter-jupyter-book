@@ -4,7 +4,7 @@ author: Tomas Beuzen
 logo: content/img/cookiecutter-jupyter-book-hex.png
 
 repository:
-  url: https://github.com/UBC-MDS/cookiecutter-jupyter-book
+  url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.book_slug }}
 
 latex:
   latex_documents:

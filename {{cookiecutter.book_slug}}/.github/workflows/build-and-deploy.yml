@@ -12,7 +12,7 @@ on:
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   build-and-deploy-book:
-    runs-on: ${{ matrix.os }}
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
@@ -21,10 +21,10 @@ jobs:
     - uses: actions/checkout@v2
 
     # Install dependencies
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}
       uses: actions/setup-python@v1
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
@@ -32,11 +32,11 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build {{ cookiecutter.project_name }}
+        jupyter-book build {{ cookiecutter.book_name }}
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: {{ cookiecutter.project_name }}/_build/html
+        github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+        publish_dir: {{ cookiecutter.book_name }}/_build/html
