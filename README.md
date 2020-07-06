@@ -17,7 +17,7 @@ $ pip install -U cookiecutter
 2. Use cookiecutter-jupyter-book to generate a Jupyter Book template:
 
 ```
-$ cookiecutter git@github.com:UBC-MDS/cookiecutter-jupyter-book.gi
+$ cookiecutter git@github.com:UBC-MDS/cookiecutter-jupyter-book.git
 ```
 
 3. Install the Jupyter Book cookiecutter template package requirements from the requirement.txt file (it is recommended to do this in a virtual environment, e.g., using conda):
