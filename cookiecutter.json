@@ -3,6 +3,7 @@
   "email": "planet.jupyter@example.com",
   "github_username": "pjupyter",
   "book_name": "jupyter-cookie",
+  "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
   "book_short_description": "This cookiecutter creates a boilerplate for a Python project.",
   "version": "'0.1.0'",
   "open_source_license": [
