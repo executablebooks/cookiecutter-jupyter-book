@@ -1,6 +1,10 @@
 # Cookiecutter-Jupyter-Book
 
-Cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html).
+<p align="center">
+  <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/content/img/cookiecutter-jupyter-book-hex.png" width="260">
+</p>
+
+A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this template [here]().
 
 ## Usage
 
@@ -32,9 +36,9 @@ $ jupyter-book build my_book/
 
 5. View the rendered book in `my_book/_build/html/index.html`.
 
-6. Make edits to the book.
+6. Now that everything is working, you can make edits to your book by, most simply, adding pages to `my_book/content/` directory and updating the table of contents in `my_book/_toc.yml`. See the [Jupyter Book documentation](https://jupyterbook.org/intro.html) for more information on customizing your book.
 
-7. When ready to deploy the book online, simply push the book (including the `.github` hidden directory) to a GitHub repository. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/build-and-deploy.yml`) will automatically build and deploy your book to the `gh-pages` branch of your repository. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list.
+7. When ready to deploy the book online, make sure your book renders locally as expected (`$ jupyter-book build my_book/`) and that you have updated the requirements.txt file to include any additional packages required to build your book. Simply push the book (including the `.github` hidden directory) to a GitHub repository. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/build-and-deploy.yml`) will automatically build and deploy your book to the `gh-pages` branch of your repository. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
 
 
 ## Acknowledgements
