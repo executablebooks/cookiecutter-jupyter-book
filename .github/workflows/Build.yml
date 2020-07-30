@@ -1,4 +1,4 @@
-name: test
+name: Build
 
 on:
   # Trigger the workflow on push or pull request on master branch
@@ -8,11 +8,11 @@ on:
   pull_request:
     branches:
       - master
-  schedule:
+  ##schedule:
     # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
     # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
     # Run every Monday at 18:00:00 UTC (Monday at 10:00:00 PST)
-    - cron: '0 18 * * 1'
+    ##- cron: '0 18 * * 1'
 
 # This job installs dependencies and attempts to use the CC
 jobs:
@@ -20,8 +20,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        python-version: [3.7]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: [3.7, 3.8]
     steps:
     - uses: actions/checkout@v2
 

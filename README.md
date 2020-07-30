@@ -1,5 +1,7 @@
 # Cookiecutter-Jupyter-Book
 
+![Build](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/Build/badge.svg?branch=master)
+
 <p align="center">
   <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/content/img/cookiecutter-jupyter-book-hex.png" width="200">
 </p>
