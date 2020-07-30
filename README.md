@@ -1,7 +1,7 @@
 # Cookiecutter-Jupyter-Book
 
 <p align="center">
-  <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/content/img/cookiecutter-jupyter-book-hex.png" width="260">
+  <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/content/img/cookiecutter-jupyter-book-hex.png" width="200">
 </p>
 
 A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this cookiecutter template [here](https://ubc-mds.github.io/cookiecutter-jupyter-book/content/introduction.html).
