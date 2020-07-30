@@ -1,6 +1,5 @@
 {
   "full_name": "Captain Planet",
-  "email": "captain.planet@example.com",
   "github_username": "cplanet",
   "book_name": "jupyter-cookie",
   "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
@@ -12,5 +11,9 @@
     "ISC license",
     "Apache Software License 2.0",
     "GNU General Public License v3"
+  ],
+  "include_github_actions": [
+    "yes",
+    "no"
   ]
 }
