@@ -1,0 +1,45 @@
+name: test
+
+on:
+  # Trigger the workflow on push or pull request on master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
+    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
+    # Run every Monday at 18:00:00 UTC (Monday at 10:00:00 PST)
+    - cron: '0 18 * * 1'
+
+# This job installs dependencies and attempts to use the CC
+jobs:
+  build-and-deploy-book:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.7]
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        pip install cookiecutter
+
+    # Use the default CC
+    - name: Cookiecutter no GHA
+      run: |
+        cookiecutter . --no-input include_github_actions=no
+
+    # Use the CC with no GitHub action file included
+    - name: Cookiecutter default
+      run: |
+        cookiecutter . --no-input --overwrite-if-exists
