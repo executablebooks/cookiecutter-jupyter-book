@@ -40,6 +40,9 @@ $ jupyter-book build my_book/
 
 7. When ready to deploy the book online, make sure your book renders locally as expected (`$ jupyter-book build my_book/`) and that you have updated the requirements.txt file to include any additional packages required to build your book. Simply push the book (including the `.github` hidden directory) to a GitHub repository. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/build-and-deploy.yml`) will automatically build and deploy your book to the `gh-pages` branch of your repository. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
 
+## Contributors
+
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/contributors).
 
 ## Acknowledgements
 

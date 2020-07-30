@@ -1,6 +1,6 @@
 # Book settings
 title: {{ cookiecutter.book_name }}
-author: Tomas Beuzen
+author: {{ cookiecutter.full_name }}
 logo: content/img/cookiecutter-jupyter-book-hex.png
 
 repository:
@@ -12,7 +12,7 @@ latex:
 
 # Execution settings
 execute:
-  execute_notebooks         : force  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  execute_notebooks         : auto  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
 
 # HTML-specific settings
 html:

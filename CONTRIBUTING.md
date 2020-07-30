@@ -1,5 +1,5 @@
 
-## Contributing
+# Contributing
 
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given.
@@ -10,7 +10,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at https://github.com/UBC-MDS/cookiecutter-jupyter-book/issues.
+Report bugs as a [GitHub issue](https://github.com/UBC-MDS/cookiecutter-jupyter-book/issues).
 
 If you are reporting a bug, please include:
 
@@ -34,7 +34,7 @@ and "help wanted" is open to whoever wants to implement it.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/UBC-MDS/cookiecutter-jupyter-book/issues.
+The best way to send feedback is to file an [issue](https://github.com/UBC-MDS/cookiecutter-jupyter-book/issues).
 
 If you are proposing a feature:
 
@@ -43,7 +43,7 @@ If you are proposing a feature:
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
 
-## Get Started!
+## Get Started
 
 Ready to contribute? Here's how to set up `cookiecutter-jupyter-book` for local development.
 

@@ -1,4 +1,4 @@
-# {{ cookiecutter.book_name }} 
+# {{ cookiecutter.book_name }}
 
 {{ cookiecutter.book_short_description }}
 
@@ -26,5 +26,10 @@ If you wish to disable this automation, you may remove the GitHub actions workfl
 
 This will automatically push your build to the `gh-pages` branch. More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
 
+## Contributors
+
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.book_slug }}/graphs/contributors).
+
 ## Credits
+
 This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [UBC-MDS/cookiecutter-jupyter-book template](https://github.com/UBC-MDS/cookiecutter-jupyter-book).
