@@ -3,10 +3,33 @@
 ![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
 
 <p align="center">
-  <img src="logo.png" width="160">
+  <img src="logo.png" width="180">
 </p>
 
 A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this cookiecutter template [here](https://ubc-mds.github.io/cookiecutter-jupyter-book/content/introduction.html).
+
+## Template
+
+```
+my_book
+├── .github
+│   └── workflows
+│       └── deploy.yml
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── my_book
+│   ├── _config.yml
+│   ├── _toc.yml
+│   ├── content.md
+│   ├── intro.md
+│   ├── logo.png
+│   ├── markdown.md
+│   ├── notebooks.ipynb
+│   └── references.bib
+├── README.md
+└── requirements.txt
+```
 
 ## Usage
 
