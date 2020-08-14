@@ -57,14 +57,14 @@ jobs:
     # Install requirements.txt
     - name: Install requirements
       run: |
-        pip install -r requirements.txt
+        pip install -r jupyter_cookie/requirements.txt
     # Build the example book
     - name: Build book
       run: |
-        jupyter-book build jupyter-cookie
+        jupyter-book build jupyter_cookie/jupyter_cookie/
     # Deploy html to gh-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: jupyter_cookie/jupyter_cookie//_build/html
