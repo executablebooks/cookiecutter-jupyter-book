@@ -23,7 +23,7 @@ cookiecutter git@github.com:UBC-MDS/cookiecutter-jupyter-book.git
 
 full_name [Captain Planet]: Tomas Beuzen
 github_username [tomasbeuzen]:
-book_name [jupyter-cookie]: my-book
+book_name [my-book]:
 book_slug [my_book]:
 book_short_description [This cookiecutter creates a simple boilerplate for a Jupyter Book.]: My first Jupyter Book!
 version ['0.1.0']:
