@@ -1,11 +1,8 @@
-name: build-and-deploy
+name: deploy
 
 on:
-  # Trigger the workflow on push or pull request on master branch
+  # Trigger the workflow on push to master branch
   push:
-    branches:
-      - master
-  pull_request:
     branches:
       - master
 

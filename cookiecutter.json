@@ -1,6 +1,6 @@
 {
   "full_name": "Captain Planet",
-  "github_username": "cplanet",
+  "github_username": "{{ cookiecutter.full_name.lower().replace(' ', '') }}",
   "book_name": "jupyter-cookie",
   "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
   "book_short_description": "This cookiecutter creates a simple boilerplate for a Jupyter Book.",
