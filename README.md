@@ -1,9 +1,9 @@
-# Cookiecutter-Jupyter-Book
+# Cookiecutter Jupyter Book
 
 ![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
 
 <p align="center">
-  <img src="logo.png" width="180">
+  <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="300">
 </p>
 
 A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this cookiecutter template [here](https://ubc-mds.github.io/cookiecutter-jupyter-book/content/introduction.html).
