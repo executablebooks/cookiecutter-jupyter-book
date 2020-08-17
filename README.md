@@ -1,9 +1,10 @@
 # Cookiecutter Jupyter Book
 
 ![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
-[![maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/commit-activity)
+[![maintenance](https://img.shields.io/badge/maintained-yes-success.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/commit-activity)
 [![release](https://img.shields.io/github/release/UBC-MDS/cookiecutter-jupyter-book.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/releases)
-[![maintenance](https://img.shields.io/badge/Python-3.7%2C%203.8-blue)]()
+[![python](https://img.shields.io/badge/python-3.7%2C%203.8-blue)]()
+[![os](https://img.shields.io/badge/OS-Ubuntu%2C%20Mac%2C%20Windows-yellow)]()
 
 <p align="center">
   <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="400">
