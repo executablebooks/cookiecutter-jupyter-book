@@ -1,6 +1,8 @@
 # Cookiecutter Jupyter Book
 
 ![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
+[![maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/commit-activity)
+[![release](https://img.shields.io/github/release/UBC-MDS/cookiecutter-jupyter-book.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/releases)
 
 <p align="center">
   <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="300">
