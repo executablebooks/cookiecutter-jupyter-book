@@ -95,6 +95,7 @@ $ jupyter-book build my_book/
    1. Make sure your book builds locally as expected (`jupyter-book build my_book/`) and that you have updated the `requirements.txt` file to include any additional packages required to build your book;
    2. Create a new public [GitHub repository](https://github.com/new) to host your book;
    3. Push your local book (including the `.github` hidden directory) to your GitHub repository. There are many ways to do this, for example:
+
       ```bash
       $ git init
       $ git add .
@@ -102,7 +103,9 @@ $ jupyter-book build my_book/
       $ git remote add origin git@github.com:<user>/<repository-name>.git
       $ git push -u origin master
       ```
+
    4. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/deploy.yml`) will automatically deploy your book to the `gh-pages` branch of your repository once pushed. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
+
    > Note: by default, the GitHub Actions workflow builds the book with Ubuntu and Python 3.8. You can modify the OS/Python version for the build in the `.github/workflows/deploy.yml` file on line 15 and 16 respectively.
 
 ## Contributors
