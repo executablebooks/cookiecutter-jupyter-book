@@ -3,14 +3,17 @@
 ![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
 [![maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/commit-activity)
 [![release](https://img.shields.io/github/release/UBC-MDS/cookiecutter-jupyter-book.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/releases)
+[![maintenance](https://img.shields.io/badge/Python-3.7%2C%203.8-blue)]()
 
 <p align="center">
-  <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="300">
+  <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="400">
 </p>
 
 A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this cookiecutter template [here](https://ubc-mds.github.io/cookiecutter-jupyter-book/content/introduction.html).
 
 ## Template
+
+The template created by this cookiecutter is shown below:
 
 ```
 my_book
@@ -38,7 +41,7 @@ my_book
 1. Install [Cookiecutter](https://github.com/cookiecutter/cookiecutter/tree/1.7.2) if you haven't installed it yet:
 
 ```bash
-pip install -U cookiecutter
+$ pip install -U cookiecutter
 ```
 
 2. Use `cookiecutter-jupyter-book` to generate a Jupyter Book template and fill out the requested information (default templating values are shown in square brackets `[]` and will be used if no other information is entered):
@@ -67,15 +70,20 @@ Choose from 1, 2 [1]:
 
 3. Install the Jupyter Book package requirements from the `requirements.txt` file (it is recommended to do this in a virtual environment, e.g., using [conda](https://docs.conda.io/en/latest/)):
 
-```
+```bash
+# Optional steps to create and activate virtual environment
 $ conda create --name mybook python=3.8 -y
 $ conda activate mybook
+```
+
+```bash
+$ cd my_book
 $ pip install -r requirements.txt
 ```
 
 4. Build the HTML render of your Jupyter Book:
 
-```
+```bash
 $ jupyter-book build my_book/
 ```
 
@@ -83,10 +91,19 @@ $ jupyter-book build my_book/
 
 6. Make edits to your book by adding more content, updating the table of contents in `my_book/_toc.yml`, and and/or by editing the configuration file `my_book/_config.yml`. See the [Jupyter Book documentation](https://jupyterbook.org/intro.html) for more information on customizing your book.
 
-7. `cookiecutter-jupyter-book` comes with a GitHub Actions workflow to help easily deploy your book online with the free [GitHub Pages](https://pages.github.com/) services. This workflow file would have been included in your directory structure if you chose `yes` for `Select include_github_actions` in Step 2 above. When ready to deploy your book online:
+7. `cookiecutter-jupyter-book` comes with a GitHub Actions workflow to help easily deploy your book online with the free [GitHub Pages](https://pages.github.com/) services. This workflow file would have been included in your directory structure if you chose `1 - yes` for `Select include_github_actions:` in Step 2 above. When ready to deploy your book online:
    1. Make sure your book builds locally as expected (`jupyter-book build my_book/`) and that you have updated the `requirements.txt` file to include any additional packages required to build your book;
-   2. Create a new [GitHub repository](https://github.com/new) to host your book;
-   3. Push your book (including the `.github` hidden directory) to your GitHub repository. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/deploy.yml`) will automatically deploy your book to the `gh-pages` branch of your repository. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
+   2. Create a new public [GitHub repository](https://github.com/new) to host your book;
+   3. Push your local book (including the `.github` hidden directory) to your GitHub repository. There are many ways to do this, for example:
+      ```bash
+      $ git init
+      $ git add .
+      $ git commit -m "first commit"
+      $ git remote add origin git@github.com:<user>/<repository-name>.git
+      $ git push -u origin master
+      ```
+   4. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/deploy.yml`) will automatically deploy your book to the `gh-pages` branch of your repository once pushed. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
+   > Note: by default, the GitHub Actions workflow builds the book with Ubuntu and Python 3.8. You can modify the OS/Python version for the build in the `.github/workflows/deploy.yml` file on line 15 and 16 respectively.
 
 ## Contributors
 

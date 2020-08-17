@@ -12,8 +12,8 @@ jobs:
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        python-version: [3.6, 3.7, 3.8]
+        os: [ubuntu-latest]
+        python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
 
@@ -29,11 +29,11 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build {{ cookiecutter.book_name }}
+        jupyter-book build {{ cookiecutter.book_slug }}
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
-        publish_dir: {{ cookiecutter.book_name }}/_build/html
+        publish_dir: {{ cookiecutter.book_slug }}/_build/html
