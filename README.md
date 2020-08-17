@@ -1,7 +1,7 @@
 # Cookiecutter Jupyter Book
 
 ![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
-[![maintenance](https://img.shields.io/badge/maintained-yes-success.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/commit-activity)
+![deploy](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/deploy/badge.svg)
 [![release](https://img.shields.io/github/release/UBC-MDS/cookiecutter-jupyter-book.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/releases)
 [![python](https://img.shields.io/badge/python-3.7%2C%203.8-blue)]()
 [![os](https://img.shields.io/badge/OS-Ubuntu%2C%20Mac%2C%20Windows-yellow)]()
@@ -105,7 +105,7 @@ $ jupyter-book build my_book/
       $ git push -u origin master
       ```
 
-   4. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/deploy.yml`) will automatically deploy your book to the `gh-pages` branch of your repository once pushed. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
+   4. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/deploy.yml`) will automatically deploy your book to the `gh-pages` branch of your repository once pushed. It is typically available after a few minutes at `https://<user>.github.io/<myonlinebook>/`. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
 
    > Note: by default, the GitHub Actions workflow file included with this cookiecutter builds the book with Ubuntu and Python 3.8. You can modify the OS/Python version for the build in the `.github/workflows/deploy.yml` file on lines 15 and 16 respectively.
 
