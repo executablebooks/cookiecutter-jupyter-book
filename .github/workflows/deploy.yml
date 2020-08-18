@@ -1,4 +1,4 @@
-name: tests
+name: deploy
 
 on:
   # Trigger the deploy on push to master branch
