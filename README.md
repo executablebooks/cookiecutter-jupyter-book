@@ -1,8 +1,8 @@
 # Cookiecutter Jupyter Book
 
-![tests](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/tests/badge.svg)
-![deploy](https://github.com/UBC-MDS/cookiecutter-jupyter-book/workflows/deploy/badge.svg)
-[![release](https://img.shields.io/github/release/UBC-MDS/cookiecutter-jupyter-book.svg)](https://github.com/UBC-MDS/cookiecutter-jupyter-book/releases)
+![tests](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/tests/badge.svg)
+![deploy](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/deploy/badge.svg)
+[![release](https://img.shields.io/github/release/executablebooks/cookiecutter-jupyter-book.svg)](https://github.com/executablebooks/cookiecutter-jupyter-book/releases)
 [![python](https://img.shields.io/badge/python-3.7%2C%203.8-blue)]()
 [![os](https://img.shields.io/badge/OS-Ubuntu%2C%20Mac%2C%20Windows-yellow)]()
 
@@ -10,7 +10,7 @@
   <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="400">
 </p>
 
-A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this cookiecutter template [here](https://ubc-mds.github.io/cookiecutter-jupyter-book/content/introduction.html).
+A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook.org/intro.html). See the rendered version of this cookiecutter template [here](https://executablebooks.github.io/cookiecutter-jupyter-book/).
 
 ## Template
 
@@ -48,7 +48,7 @@ $ pip install -U cookiecutter
 2. Use `cookiecutter-jupyter-book` to generate a Jupyter Book template and fill out the requested information (default templating values are shown in square brackets `[]` and will be used if no other information is entered):
 
 ```bash
-cookiecutter git@github.com:UBC-MDS/cookiecutter-jupyter-book.git
+$ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
 
 full_name [Captain Planet]: Tomas Beuzen
 github_username [tomasbeuzen]:
@@ -111,7 +111,7 @@ $ jupyter-book build my_book/
 
 ## Contributors
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/UBC-MDS/cookiecutter-jupyter-book/graphs/contributors).
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/executablebooks/cookiecutter-jupyter-book/graphs/contributors).
 
 ## Acknowledgements
 

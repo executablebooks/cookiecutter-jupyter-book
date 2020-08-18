@@ -10,7 +10,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs as a [GitHub issue](https://github.com/UBC-MDS/cookiecutter-jupyter-book/issues).
+Report bugs as a [GitHub issue](https://github.com/executablebooks/cookiecutter-jupyter-book/issues).
 
 If you are reporting a bug, please include:
 
@@ -34,7 +34,7 @@ and "help wanted" is open to whoever wants to implement it.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an [issue](https://github.com/UBC-MDS/cookiecutter-jupyter-book/issues).
+The best way to send feedback is to file an [issue](https://github.com/executablebooks/cookiecutter-jupyter-book/issues).
 
 If you are proposing a feature:
 
@@ -70,7 +70,3 @@ Ready to contribute? Here's how to set up `cookiecutter-jupyter-book` for local 
 	```
 
 6. Submit a pull request through the GitHub website.
-
-## Code of Conduct
-
-Please note that the `cookiecutter-jupyter-book` project is released with [this Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
