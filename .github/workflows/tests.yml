@@ -1,4 +1,4 @@
-name: cc-tests
+name: tests
 
 on:
   # Trigger the workflow on push or pull request on master branch
