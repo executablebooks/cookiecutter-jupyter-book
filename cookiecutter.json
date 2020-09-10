@@ -1,5 +1,5 @@
 {
-  "author_name": "Captain Planet",
+  "author_name": "Captain Jupyter",
   "github_username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
   "book_name": "my-book",
   "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",

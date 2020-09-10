@@ -50,7 +50,7 @@ $ pip install -U cookiecutter
 ```bash
 $ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
 
-author_name [Captain Planet]: Tomas Beuzen
+author_name [Captain Jupyter]: Tomas Beuzen
 github_username [tomasbeuzen]:
 book_name [my-book]:
 book_slug [my_book]:
