@@ -8,7 +8,7 @@ You can contribute in many ways:
 
 ## Types of Contributions
 
-### Report Bugs
+### Report Bugs, Request Features or Submit Feedback
 
 Report bugs as a [GitHub issue](https://github.com/executablebooks/cookiecutter-jupyter-book/issues).
 
@@ -18,30 +18,16 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-### Fix Bugs
-
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
-
-### Implement Features
-
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
-
-### Write Documentation
-
-`cookiecutter-jupyter-book` could always use more documentation!
-
-### Submit Feedback
-
-The best way to send feedback is to file an [issue](https://github.com/executablebooks/cookiecutter-jupyter-book/issues).
-
-If you are proposing a feature:
+If you are proposing a feature, please include:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
+
+### Improvements
+
+Look through the (https://github.com/executablebooks/cookiecutter-jupyter-book/issues) for bugs, feature requests, etc and feel free to contribute!
 
 ## Get Started
 
@@ -69,4 +55,4 @@ Ready to contribute? Here's how to set up `cookiecutter-jupyter-book` for local 
 	git push origin name-of-your-bugfix-or-feature
 	```
 
-6. Submit a pull request through the GitHub website.
+6. Open a pull request through the GitHub website. Naming convention for pull requests is detailed [here](https://github.com/executablebooks/.github/blob/master/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.
