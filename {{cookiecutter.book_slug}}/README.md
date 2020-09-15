@@ -9,7 +9,7 @@
 If you'd like to develop on and build the {{ cookiecutter.book_name }} book, you should:
 
 - Clone this repository and run
-- Run `pip install requirements.txt` (it is recommended you do this within a virtual environment)
+- Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
 - (Recommended) Remove the existing `{{ cookiecutter.book_name }}/_build/` directory
 - Run `jupyter-book build {{ cookiecutter.book_name }}/`
 
