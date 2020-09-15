@@ -24,8 +24,8 @@ before_script:
 pages:
   script:
     - pip install -r requirements.txt
-    - jupyter-book build group_theory/
-    - mv group_theory/_build/html/ public/
+    - jupyter-book build {{ cookiecutter.book_slug }}
+    - mv {{ cookiecutter.book_slug }}/_build/html/ public/
   artifacts:
     paths:
       - public
