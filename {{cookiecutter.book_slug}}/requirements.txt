@@ -1,4 +1,4 @@
 jupyter-book
 matplotlib
 numpy
-{% if cookiecutter.include_github_actions == 'yes' -%}ghp-import{% endif %}
+{% if cookiecutter.include_ci == 'github' -%}ghp-import{% endif %}
