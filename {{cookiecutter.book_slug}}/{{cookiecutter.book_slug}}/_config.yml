@@ -42,7 +42,7 @@ launch_buttons:
   thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
 
 repository:
-  url                       : https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.book_slug }}  # The URL to your book's repository
+  url                       : ""  # The URL to your book's repository
   path_to_book              : ""  # A path to your book's folder, relative to the repository root.
   branch                    : master  # Which branch of the repository should be used when creating links
 
