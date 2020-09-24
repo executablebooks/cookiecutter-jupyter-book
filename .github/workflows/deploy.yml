@@ -34,7 +34,7 @@ jobs:
     # Use default CC
     - name: Cookiecutter no GHA
       run: |
-        cookiecutter . --no-input include_github_actions=no
+        cookiecutter . --no-input include_ci=no
     # Install requirements.txt
     - name: Install requirements
       run: |

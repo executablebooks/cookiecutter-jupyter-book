@@ -37,7 +37,7 @@ jobs:
     # Use the default CC
     - name: Cookiecutter no GHA
       run: |
-        cookiecutter . --no-input include_github_actions=no
+        cookiecutter . --no-input include_ci=no
     # Use the CC with no GitHub action file included
     - name: Cookiecutter default
       run: |

@@ -54,11 +54,18 @@ def _message_box(msg, color="green", doprint=True, print_func=print):
 ##############################################################################
 # Post-gen script
 
-no_workflow = "{{cookiecutter.include_github_actions}}" == "no"
+github = "{{cookiecutter.include_ci}}" == "github"
+gitlab = "{{cookiecutter.include_ci}}" == "gitlab"
 
-if no_workflow:
-    # remove top-level file inside the generated folder
+
+if github:
+    remove(".gitlab-ci.yml")
+elif gitlab:
     remove(".github/")
+else:
+    # remove all CI
+    remove(".github/")
+    remove(".gitlab-ci.yml")
 
 
 if (

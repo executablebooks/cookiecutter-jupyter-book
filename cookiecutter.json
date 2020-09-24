@@ -12,8 +12,9 @@
     "Apache Software License 2.0",
     "GNU General Public License v3"
   ],
-  "include_github_actions": [
-    "yes",
+  "include_ci": [
+    "github",
+    "gitlab",
     "no"
   ]
 }
