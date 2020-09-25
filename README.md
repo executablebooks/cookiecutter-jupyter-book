@@ -14,7 +14,7 @@ A cookiecutter template for creating a simple [Jupyter Book](https://jupyterbook
 
 ## Template
 
-The template created by this cookiecutter is shown below:
+An example template created by this cookiecutter is shown below:
 
 ```
 my_book
@@ -51,7 +51,7 @@ $ pip install -U cookiecutter
 $ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
 
 author_name [Captain Jupyter]: Tomas Beuzen
-github_username [tomasbeuzen]:
+github_or_gitlab_username [tomasbeuzen]:
 book_name [my-book]:
 book_slug [my_book]:
 book_short_description [This cookiecutter creates a simple boilerplate for a Jupyter Book.]: My first Jupyter Book!
@@ -63,7 +63,7 @@ Select open_source_license:
 4 - Apache Software License 2.0
 5 - GNU General Public License v3
 Choose from 1, 2, 3, 4, 5 [1]:
-Select include_ci:
+Select include_ci_files:
 1 - github
 2 - gitlab
 3 - no
@@ -93,7 +93,7 @@ $ jupyter-book build my_book/
 
 6. Make edits to your book by adding more content, updating the table of contents in `my_book/_toc.yml`, and and/or by editing the configuration file `my_book/_config.yml`. See the [Jupyter Book documentation](https://jupyterbook.org/intro.html) for more information on customizing your book.
 
-7. `cookiecutter-jupyter-book` optionally comes with CI workflow files to help easily deploy your book online. A CI workflow file would have been included in your directory structure if you chose `1 - github` or `2 - gitlab` for `Select include_ci:` in Step 2 above. For example, if you chose `1 - github`, when ready to deploy your book online:
+7. `cookiecutter-jupyter-book` optionally comes with CI workflow files to help easily deploy your book online. A CI workflow file would have been included in your directory structure if you chose `1 - github` or `2 - gitlab` for `Select include_ci_files:` in Step 2 above. For example, if you chose `1 - github`, when ready to deploy your book online:
    1. Make sure your book builds locally as expected (`jupyter-book build my_book/`) and that you have updated the `requirements.txt` file to include any additional packages required to build your book;
    2. Create a new public [GitHub repository](https://github.com/new) to host your book;
    3. Push your local book (including the `.github` hidden directory) to your GitHub repository. There are many ways to do this, for example:
@@ -112,9 +112,11 @@ $ jupyter-book build my_book/
 
    > Read more about GitHub Pages and Jupyter Book [here](https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions), or using GitLab Pages [here](https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_from_scratch.html).
 
-## Contributors
+## Contributing
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/executablebooks/cookiecutter-jupyter-book/graphs/contributors).
+We welcome and recognize all contributions. If you'd like to contribute to the project by providing feedback, identifying a bug or working on a new feature, check out the [contributing guide](CONTRIBUTING.md) to get started.
+
+You can see a list of current contributors in the [contributors tab](https://github.com/executablebooks/cookiecutter-jupyter-book/graphs/contributors).
 
 ## Acknowledgements
 
