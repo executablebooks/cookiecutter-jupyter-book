@@ -55,4 +55,4 @@ Ready to contribute? Here's how to set up `cookiecutter-jupyter-book` for local 
 	git push origin name-of-your-bugfix-or-feature
 	```
 
-6. Open a pull request through the GitHub website. Naming convention for pull requests is detailed [here](https://github.com/executablebooks/.github/blob/master/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.
+6. Open a pull request through the GitHub website. Naming convention for pull requests is [detailed here](https://github.com/executablebooks/.github/blob/master/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.
