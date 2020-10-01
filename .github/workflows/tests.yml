@@ -9,11 +9,7 @@ on:
     branches:
       - master
   schedule:
-    # cookiecutter/jupyter-book is updated regularly, let's run these tests every month in case something fails
-    # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
-    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
-    # https://crontab.guru/every-month
-    # Run cron job every month
+    # Run cron job every month, https://crontab.guru/every-month
     - cron: '0 0 1 * *'
 
 jobs:
@@ -26,27 +22,25 @@ jobs:
         python-version: [3.7, 3.8]
     steps:
     - uses: actions/checkout@v2
-    # Install CC
+    # Setup
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install CC
+    - name: Install dependencies
       run: |
-        pip install cookiecutter
+        pip install -r requirements.txt
     # Use the default CC
-    - name: Cookiecutter no GHA
+    - name: Check black style
       run: |
-        cookiecutter . --no-input include_ci=no
-    # Use the CC with no GitHub action file included
-    - name: Cookiecutter default
+        black ./ --check
+    # Run tests
+    - name: Pytest tests
+      run: |
+        pytest
+    # Build the example book
+    - name: Build default book
       run: |
         cookiecutter . --no-input --overwrite-if-exists
-    # Install requirements.txt
-    - name: Install requirements
-      run: |
         pip install -r my_book/requirements.txt
-    # Build the example book
-    - name: Build book
-      run: |
         jupyter-book build my_book/my_book/
