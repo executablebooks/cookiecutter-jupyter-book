@@ -56,6 +56,7 @@ def _message_box(msg, color="green", doprint=True, print_func=print):
 
 github = "{{cookiecutter.include_ci}}" == "github"
 gitlab = "{{cookiecutter.include_ci}}" == "gitlab"
+license = "{{cookiecutter.open_source_license}}" == "None"
 
 
 if github:
@@ -66,6 +67,11 @@ else:
     # remove all CI
     remove(".github/")
     remove(".gitlab-ci.yml")
+
+
+# Remove license
+if license:
+    remove("LICENSE")
 
 
 if (

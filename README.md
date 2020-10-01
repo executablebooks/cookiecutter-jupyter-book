@@ -62,7 +62,8 @@ Select open_source_license:
 3 - ISC license
 4 - Apache Software License 2.0
 5 - GNU General Public License v3
-Choose from 1, 2, 3, 4, 5 [1]:
+6 - None
+Choose from 1, 2, 3, 4, 5, 6 [1]:
 Select include_ci_files:
 1 - github
 2 - gitlab
