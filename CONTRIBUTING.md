@@ -34,25 +34,27 @@ Look through the (https://github.com/executablebooks/cookiecutter-jupyter-book/i
 Ready to contribute? Here's how to set up `cookiecutter-jupyter-book` for local development.
 
 1. Fork the `cookiecutter-jupyter-book` repo on GitHub.
-2. Clone your fork locally:
+2. Clone your fork locally and install requirements:
 
-	```
- 	git clone git@github.com:your_name_here/cookiecutter-jupyter-book.git
-	```
+```sh
+git clone git@github.com:your_name_here/cookiecutter-jupyter-book.git
+pip install -r requirements.txt
+```
 
-4. Create a branch for local development:
+3. Create a branch for local development:
 
-	```
-	git checkout -b name-of-your-bugfix-or-feature
-	```
-	Now you can make your changes locally.
+```sh
+git checkout -b name-of-your-bugfix-or-feature
+```
 
-5. Commit your changes and push your branch to GitHub:
+4. Make your desired changes, run tests, and push your branch to GitHub when you're ready:
 
-	```
-	git add .
-	git commit -m "Your detailed description of your changes."
-	git push origin name-of-your-bugfix-or-feature
-	```
+```sh
+pytest
+black ./ --check
+git add .
+git commit -m "Your detailed description of your changes."
+git push origin name-of-your-bugfix-or-feature
+```
 
-6. Open a pull request through the GitHub website. Naming convention for pull requests is [detailed here](https://github.com/executablebooks/.github/blob/master/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.
+5. Open a pull request through the GitHub website. Naming convention for pull requests is [detailed here](https://github.com/executablebooks/.github/blob/master/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.
