@@ -1,10 +1,10 @@
 name: deploy
 
 on:
-  # Trigger the deploy on push to master branch
+  # Trigger the deploy on push to main branch
   push:
     branches:
-      - master
+      - main
   schedule:
     # jupyter-book is updated regularly, let's run this deployment every month in case something fails
     # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
@@ -45,7 +45,7 @@ jobs:
         jupyter-book build my_book/my_book/
     # Deploy html to gh-pages
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@v3.6.4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: my_book/my_book/_build/html

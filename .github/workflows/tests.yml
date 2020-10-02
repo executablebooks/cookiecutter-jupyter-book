@@ -1,13 +1,13 @@
 name: tests
 
 on:
-  # Trigger the workflow on push or pull request on master branch
+  # Trigger the workflow on push or pull request on main branch
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   schedule:
     # Run cron job every month, https://crontab.guru/every-month
     - cron: '0 0 1 * *'
@@ -46,7 +46,7 @@ jobs:
         jupyter-book build my_book/my_book/
     # Push example book to gh-pages-test
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@v3.6.4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: my_book/my_book/_build/html

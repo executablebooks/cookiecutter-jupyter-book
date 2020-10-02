@@ -1,10 +1,10 @@
 name: deploy
 
 on:
-  # Trigger the workflow on push to master branch
+  # Trigger the workflow on push to main branch
   push:
     branches:
-      - master
+      - main
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
@@ -33,7 +33,7 @@ jobs:
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@v3.6.4
       with:
         github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
         publish_dir: {{ cookiecutter.book_slug }}/_build/html

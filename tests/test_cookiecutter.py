@@ -61,7 +61,7 @@ def test_cookiecutter_all_options(base_command, open_source_license, include_ci)
 
 def test_jupyter_book_cookiecutter(base_command):
     # same tests being run in the Jupyter Book test regime
-    # https://github.com/executablebooks/jupyter-book/blob/master/tests/test_build.py#L26-L35
+    # https://github.com/executablebooks/jupyter-book/blob/main/tests/test_build.py#L26-L35
     # note that default cookiecutter book name is "my_book" which is why it's used below
     path = Path(base_command[1])
     result = subprocess.run(base_command[0], shell=True)

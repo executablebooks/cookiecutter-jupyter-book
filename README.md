@@ -104,7 +104,7 @@ $ jupyter-book build my_book/
       $ git add .
       $ git commit -m "first commit"
       $ git remote add origin git@github.com:<user>/<repository-name>.git
-      $ git push -u origin master
+      $ git push -u origin main
       ```
 
    4. The GitHub Actions workflow provided with the cookiecutter (`my_book/.github/workflows/deploy.yml`) will automatically deploy your book to the `gh-pages` branch of your repository once pushed. It is typically available after a few minutes at `https://<user>.github.io/<myonlinebook>/`. You may need to go to the `Settings` tab of your repository and under the **GitHub Pages** heading, choose the `gh-pages branch` from the **Source** drop-down list. For alternative methods of deploying your book online, see the See the [Jupyter Book documentation](https://jupyterbook.org/intro.html).
