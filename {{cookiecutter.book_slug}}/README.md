@@ -17,7 +17,7 @@ A fully-rendered HTML version of the book will be built in `{{ cookiecutter.book
 
 ### Hosting the book
 
-The html version of the book is hosted on the `gh-pages` branch of this repo. A GitHub actions workflow has been created that automatically builds and pushes the book to this branch on a push or pull request to master.
+The html version of the book is hosted on the `gh-pages` branch of this repo. A GitHub actions workflow has been created that automatically builds and pushes the book to this branch on a push or pull request to main.
 
 If you wish to disable this automation, you may remove the GitHub actions workflow and build the book manually by:
 

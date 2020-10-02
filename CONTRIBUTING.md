@@ -57,4 +57,4 @@ git commit -m "Your detailed description of your changes."
 git push origin name-of-your-bugfix-or-feature
 ```
 
-5. Open a pull request through the GitHub website. Naming convention for pull requests is [detailed here](https://github.com/executablebooks/.github/blob/master/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.
+5. Open a pull request through the GitHub website. Naming convention for pull requests is [detailed here](https://github.com/executablebooks/.github/blob/main/CONTRIBUTING.md#commit-messages). For example, a pull request that adds a new feature might be titled: `✨ NEW: validate entered github username`.

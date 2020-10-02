@@ -1,13 +1,13 @@
 name: tests
 
 on:
-  # Trigger the workflow on push or pull request on master branch
+  # Trigger the workflow on push or pull request on main branch
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   schedule:
     # Run cron job every month, https://crontab.guru/every-month
     - cron: '0 0 1 * *'
