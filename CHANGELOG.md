@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.7 2020-10-02
+
+- 🔧 MAINTAIN: change "master" to "main" for this repo and all CC templates (@TomasBeuzen) (PR: #22)
+
 ## v0.6 2020-10-02
 
 General improvement to the repo in this version, with updated docs and new tests. We've also added preliminary support for GitLab CI.
