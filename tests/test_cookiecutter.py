@@ -4,10 +4,21 @@ from pathlib import Path
 from itertools import product
 from pytest import fixture, mark
 
+IGNORE = [".DS_Store", "__pycache__"]
+
 
 @fixture()
 def base_command(tmpdir):
     return (f"cookiecutter . --no-input --output-dir {tmpdir}", tmpdir)
+
+
+def num_items(path, directory=[""]):
+    files = [
+        file
+        for file in path.joinpath(*directory).iterdir()
+        if file.name not in IGNORE
+    ]
+    return len(files)
 
 
 def test_cookiecutter_default_options(base_command):
@@ -17,46 +28,38 @@ def test_cookiecutter_default_options(base_command):
 
 with open("cookiecutter.json") as f:
     options = json.load(f)
-combinations = list(product(options["open_source_license"], options["include_ci"]))
+combinations = list(
+    product(options["open_source_license"], options["include_ci"])
+)
 
 
 @mark.parametrize("open_source_license,include_ci", combinations)
-def test_cookiecutter_all_options(base_command, open_source_license, include_ci):
-    params = f" open_source_license='{open_source_license}' include_ci={include_ci}"
+def test_cookiecutter_all_options(
+    base_command, open_source_license, include_ci
+):
+    params = (
+        f" open_source_license='{open_source_license}' include_ci={include_ci}"
+    )
     path = Path(base_command[1])
     result = subprocess.run(base_command[0] + params, shell=True)
     assert result.returncode == 0
-    try:
-        # annoying work-around for MAC OS .DS_Store files
-        path.joinpath("my_book", ".DS_Store").unlink()
-        path.joinpath("my_book", "my_book", ".DS_Store").unlink()
-    except:
-        pass
-    assert len(list(path.joinpath("my_book", "my_book").iterdir())) == 8
-    print(open_source_license)
-    print(include_ci)
+    assert num_items(path, ["my_book", "my_book"]) == 8
     if open_source_license == "None":
         if include_ci == "github":
-            assert (
-                len(list(path.joinpath("my_book", ".github", "workflows").iterdir()))
-                == 1
-            )
-            assert len(list(path.joinpath("my_book").iterdir())) == 6
+            assert num_items(path, ["my_book", ".github", "workflows"]) == 1
+            assert num_items(path, ["my_book"]) == 6
         elif include_ci == "gitlab":
-            assert len(list(path.joinpath("my_book").iterdir())) == 6
+            assert num_items(path, ["my_book"]) == 6
         else:
-            assert len(list(path.joinpath("my_book").iterdir())) == 5
+            assert num_items(path, ["my_book"]) == 5
     else:
         if include_ci == "github":
-            assert (
-                len(list(path.joinpath("my_book", ".github", "workflows").iterdir()))
-                == 1
-            )
-            assert len(list(path.joinpath("my_book").iterdir())) == 7
+            assert num_items(path, ["my_book", ".github", "workflows"]) == 1
+            assert num_items(path, ["my_book"]) == 7
         elif include_ci == "gitlab":
-            assert len(list(path.joinpath("my_book").iterdir())) == 7
+            assert num_items(path, ["my_book"]) == 7
         else:
-            assert len(list(path.joinpath("my_book").iterdir())) == 6
+            assert num_items(path, ["my_book"]) == 6
 
 
 def test_jupyter_book_cookiecutter(base_command):
@@ -65,18 +68,11 @@ def test_jupyter_book_cookiecutter(base_command):
     # note that default cookiecutter book name is "my_book" which is why it's used below
     path = Path(base_command[1])
     result = subprocess.run(base_command[0], shell=True)
-    try:
-        # annoying work-around for MAC OS .DS_Store files
-        path.joinpath("my_book", ".DS_Store").unlink()
-        path.joinpath("my_book", "my_book", ".DS_Store").unlink()
-    except:
-        pass
     assert result.returncode == 0
     assert path.joinpath("my_book", "my_book", "_config.yml").exists()
-    print(list(path.joinpath("my_book").iterdir()))
-    assert len(list(path.joinpath("my_book").iterdir())) == 7
-    assert len(list(path.joinpath("my_book", ".github", "workflows").iterdir())) == 1
-    assert len(list(path.joinpath("my_book", "my_book").iterdir())) == 8
+    assert num_items(path, ["my_book"]) == 7
+    assert num_items(path, ["my_book", ".github", "workflows"]) == 1
+    assert num_items(path, ["my_book", "my_book"]) == 8
 
 
 @mark.parametrize(
@@ -89,7 +85,9 @@ def test_jupyter_book_cookiecutter(base_command):
 def test_warning_message(base_command, username, service, msg):
     path = Path(base_command[1])
     result = subprocess.run(
-        base_command[0] + f" include_ci={service}", shell=True, capture_output=True
+        base_command[0] + f" include_ci={service}",
+        shell=True,
+        capture_output=True,
     )
     print(result.stdout.decode("ascii"))
     assert result.returncode == 0
