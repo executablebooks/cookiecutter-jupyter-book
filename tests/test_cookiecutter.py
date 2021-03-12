@@ -14,9 +14,7 @@ def base_command(tmpdir):
 
 def num_items(path, directory=[""]):
     files = [
-        file
-        for file in path.joinpath(*directory).iterdir()
-        if file.name not in IGNORE
+        file for file in path.joinpath(*directory).iterdir() if file.name not in IGNORE
     ]
     return len(files)
 
@@ -28,18 +26,12 @@ def test_cookiecutter_default_options(base_command):
 
 with open("cookiecutter.json") as f:
     options = json.load(f)
-combinations = list(
-    product(options["open_source_license"], options["include_ci"])
-)
+combinations = list(product(options["open_source_license"], options["include_ci"]))
 
 
 @mark.parametrize("open_source_license,include_ci", combinations)
-def test_cookiecutter_all_options(
-    base_command, open_source_license, include_ci
-):
-    params = (
-        f" open_source_license='{open_source_license}' include_ci={include_ci}"
-    )
+def test_cookiecutter_all_options(base_command, open_source_license, include_ci):
+    params = f" open_source_license='{open_source_license}' include_ci={include_ci}"
     path = Path(base_command[1])
     result = subprocess.run(base_command[0] + params, shell=True)
     assert result.returncode == 0
