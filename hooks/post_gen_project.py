@@ -2,6 +2,7 @@
 import os
 import shutil
 import requests
+import jupyter_book
 from textwrap import dedent
 
 ##############################################################################
@@ -13,6 +14,11 @@ def remove(filepath):
         os.remove(filepath)
     elif os.path.isdir(filepath):
         shutil.rmtree(filepath)
+
+
+def rename(current_filepath, new_filepath):
+    if os.path.isfile(current_filepath):
+        os.rename(current_filepath, new_filepath)
 
 
 ##############################################################################
@@ -57,8 +63,9 @@ def _message_box(msg, color="green", doprint=True, print_func=print):
 github = "{{cookiecutter.include_ci}}" == "github"
 gitlab = "{{cookiecutter.include_ci}}" == "gitlab"
 license = "{{cookiecutter.open_source_license}}" == "None"
+version = jupyter_book.__version__
 
-
+# Remove CI
 if github:
     remove(".gitlab-ci.yml")
 elif gitlab:
@@ -74,6 +81,18 @@ if license:
     remove("LICENSE")
 
 
+# Legacy support for old JB ToC format
+if version < "0.11.0":
+    remove("{{cookiecutter.book_slug}}/_toc.yml")
+    rename(
+        "{{cookiecutter.book_slug}}/_toc-legacy.yml",
+        "{{cookiecutter.book_slug}}/_toc.yml",
+    )
+else:
+    remove("{{cookiecutter.book_slug}}/_toc-legacy.yml")
+
+
+# Check existence of GitHub user, else raise warning
 if (
     not requests.get(
         "http://www.github.com/{{cookiecutter.github_username}}"
