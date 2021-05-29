@@ -1,5 +1,10 @@
 # Change Log
 
+## v0.8 2020-05-29
+
+- 🔧 MAINTAIN: support new toc format (@TomasBeuzen) (PR: #26)
+- 🔧 MAINTAIN: update templating files from Jupyter Book repo (@TomasBeuzen) (PR: #24)
+
 ## v0.7 2020-10-02
 
 - 🔧 MAINTAIN: change "master" to "main" for this repo and all CC templates (@TomasBeuzen) (PR: #22)
