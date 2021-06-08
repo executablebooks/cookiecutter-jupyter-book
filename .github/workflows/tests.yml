@@ -11,6 +11,7 @@ on:
   schedule:
     # Run cron job every month, https://crontab.guru/every-month
     - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 jobs:
   # This job tests that the CC works
