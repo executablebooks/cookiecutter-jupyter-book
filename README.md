@@ -52,7 +52,7 @@ $ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
 
 author_name [Captain Jupyter]: Tomas Beuzen
 github_or_gitlab_username [tomasbeuzen]:
-book_name [my-book]:
+book_name [My Book]:
 book_slug [my_book]:
 book_short_description [This cookiecutter creates a simple boilerplate for a Jupyter Book.]: My first Jupyter Book!
 version ['0.1.0']:
