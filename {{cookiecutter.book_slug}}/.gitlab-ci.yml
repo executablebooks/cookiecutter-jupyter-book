@@ -31,3 +31,9 @@ pages:
       - public
   only:
     - master
+    
+workflow:
+  rules:
+    - if: $CI_COMMIT_REF_NAME =~ /-wip$/
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push"'
