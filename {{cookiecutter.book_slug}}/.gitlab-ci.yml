@@ -30,4 +30,10 @@ pages:
     paths:
       - public
   only:
-    - master
+    - main
+    
+workflow:
+  rules:
+    - if: $CI_COMMIT_REF_NAME =~ /-wip$/  # Pipelines for branch or tag names that include -wip don't run
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push"'
