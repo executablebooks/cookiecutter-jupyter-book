@@ -42,7 +42,7 @@ my_book
 1. Install [Cookiecutter](https://github.com/cookiecutter/cookiecutter/tree/1.7.2) if you haven't installed it yet:
 
 ```bash
-$ pip install -U cookiecutter
+$ pip install -U cookiecutter jupyter-book
 ```
 
 2. Use `cookiecutter-jupyter-book` to generate a Jupyter Book template and fill out the requested information (default templating values are shown in square brackets `[]` and will be used if no other information is entered):
