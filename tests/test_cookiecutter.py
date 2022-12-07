@@ -35,7 +35,7 @@ def test_cookiecutter_all_options(base_command, open_source_license, include_ci)
     path = Path(base_command[1])
     result = subprocess.run(base_command[0] + params, shell=True)
     assert result.returncode == 0
-    assert num_items(path, ["my_book", "my_book"]) == 8
+    assert num_items(path, ["my_book", "my_book"]) == 9
     if open_source_license == "None":
         if include_ci == "github":
             assert num_items(path, ["my_book", ".github", "workflows"]) == 1
@@ -64,7 +64,7 @@ def test_jupyter_book_cookiecutter(base_command):
     assert path.joinpath("my_book", "my_book", "_config.yml").exists()
     assert num_items(path, ["my_book"]) == 7
     assert num_items(path, ["my_book", ".github", "workflows"]) == 1
-    assert num_items(path, ["my_book", "my_book"]) == 8
+    assert num_items(path, ["my_book", "my_book"]) == 9
 
 
 @mark.parametrize(
