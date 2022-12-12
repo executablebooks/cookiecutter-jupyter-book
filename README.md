@@ -3,7 +3,7 @@
 ![tests](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/tests/badge.svg)
 ![deploy](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/deploy/badge.svg)
 [![release](https://img.shields.io/github/release/executablebooks/cookiecutter-jupyter-book.svg)](https://github.com/executablebooks/cookiecutter-jupyter-book/releases)
-[![python](https://img.shields.io/badge/python-3.7%2C%203.8-blue)]()
+[![python](https://img.shields.io/badge/python-3.8%2C%203.9%2C%203.10-blue)]()
 [![os](https://img.shields.io/badge/OS-Ubuntu%2C%20Mac%2C%20Windows-yellow)]()
 
 <p align="center">
