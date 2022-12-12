@@ -8,9 +8,9 @@
   "open_source_license": [
     "MIT license",
     "BSD license",
-    "ISC license",
     "Apache Software License 2.0",
-    "GNU General Public License v3",
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
     "None"
   ],
   "include_ci": [

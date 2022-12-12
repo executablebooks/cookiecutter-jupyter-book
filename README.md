@@ -3,7 +3,7 @@
 ![tests](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/tests/badge.svg)
 ![deploy](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/deploy/badge.svg)
 [![release](https://img.shields.io/github/release/executablebooks/cookiecutter-jupyter-book.svg)](https://github.com/executablebooks/cookiecutter-jupyter-book/releases)
-[![python](https://img.shields.io/badge/python-3.7%2C%203.8-blue)]()
+[![python](https://img.shields.io/badge/python-3.8%2C%203.9%2C%203.10-blue)]()
 [![os](https://img.shields.io/badge/OS-Ubuntu%2C%20Mac%2C%20Windows-yellow)]()
 
 <p align="center">
@@ -31,6 +31,7 @@ my_book
 │   ├── intro.md
 │   ├── logo.png
 │   ├── markdown.md
+│   ├── markdown-notebooks.md
 │   ├── notebooks.ipynb
 │   └── references.bib
 ├── README.md
@@ -51,7 +52,7 @@ $ pip install -U cookiecutter jupyter-book
 $ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
 
 author_name [Captain Jupyter]: Tomas Beuzen
-github_or_gitlab_username [tomasbeuzen]:
+github_username [tomasbeuzen]:
 book_name [My Book]:
 book_slug [my_book]:
 book_short_description [This cookiecutter creates a simple boilerplate for a Jupyter Book.]: My first Jupyter Book!
@@ -59,12 +60,12 @@ version ['0.1.0']:
 Select open_source_license:
 1 - MIT license
 2 - BSD license
-3 - ISC license
-4 - Apache Software License 2.0
-5 - GNU General Public License v3
+3 - Apache Software License 2.0
+4 - CC BY 4.0
+5 - CC BY-SA 4.0
 6 - None
 Choose from 1, 2, 3, 4, 5, 6 [1]:
-Select include_ci_files:
+Select include_ci:
 1 - github
 2 - gitlab
 3 - no
