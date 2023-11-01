@@ -13,20 +13,14 @@ on:
     - cron: '0 0 1 * *'
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   # This job tests that the CC works
   test-cc-and-jb-build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]  # currently not testing on windows
-        python-version: [3.9]
+    runs-on: ubuntu-latest
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      pages: write
+      id-token: write
     steps:
     - uses: actions/checkout@v3
 
