@@ -1,4 +1,4 @@
-name: deploy
+name: deploy-book
 
 on:
   # Trigger the workflow on push to main branch
@@ -6,34 +6,47 @@ on:
     branches:
       - main
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
+env:
+  BASE_URL: {% raw %}/${{ github.event.repository.name }}{% endraw %}
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy-book:
-    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.8]
+  deploy-book:
+    runs-on: ubuntu-latest
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      pages: write
+      id-token: write
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-    # Install dependencies
-    - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}
-      uses: actions/setup-python@v1
-      with:
-        python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      # Install dependencies
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
 
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build {{ cookiecutter.book_slug }}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-    # Deploy the book's HTML to gh-pages branch
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
-        publish_dir: {{ cookiecutter.book_slug }}/_build/html
+      # Build the book
+      - name: Build the book
+        run: |
+          jupyter-book build .
+
+      # Upload the book's HTML as an artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "_build/html"
+
+      # Deploy the book's HTML to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
