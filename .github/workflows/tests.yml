@@ -13,6 +13,12 @@ on:
     - cron: '0 0 1 * *'
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   # This job tests that the CC works
   test-cc-and-jb-build:
@@ -22,12 +28,13 @@ jobs:
         os: [ubuntu-latest]  # currently not testing on windows
         python-version: [3.9]
     steps:
-    - uses: actions/checkout@v2
-    # Setup
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+    - uses: actions/checkout@v3
+
+    # Install dependencies
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.11
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
@@ -44,11 +51,9 @@ jobs:
       run: |
         cookiecutter . --no-input --overwrite-if-exists
         pip install -r my_book/requirements.txt
-        jupyter-book build my_book/my_book/
-    # Push example book to gh-pages-test
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+        jupyter-book build .
+    # Upload the book's HTML as an artifact
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: my_book/my_book/_build/html
-        publish_branch: gh-pages-test
+        path: "_build/html"
