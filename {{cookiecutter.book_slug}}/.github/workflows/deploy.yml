@@ -38,7 +38,7 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          jupyter-book build .
+          jupyter-book build {{cookiecutter.book_slug}}
 
       # Upload the book's HTML as an artifact
       - name: Upload artifact
