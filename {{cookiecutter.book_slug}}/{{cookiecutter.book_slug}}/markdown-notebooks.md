@@ -5,8 +5,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
+    format_version: 4.0.0
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3
   language: python
