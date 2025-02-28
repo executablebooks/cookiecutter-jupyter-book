@@ -23,34 +23,36 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Install dependencies
       - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: "3.11"
+          cache: pip # Implicitly depends upon requirements.txt
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
+
       # Use default CC
       - name: Cookiecutter no GHA
-        run: |
-          cookiecutter . --no-input include_ci=no
+        run: cookiecutter . --no-input include_ci=no
+
       # Install requirements.txt
       - name: Install requirements
-        run: |
-          pip install -r my_book/requirements.txt
+        run: pip install -r my_book/requirements.txt
+
       # Build the example book
       - name: Build book
-        run: |
-          jupyter-book build my_book/my_book/
+        run: jupyter-book build my_book/my_book/
+
       # Upload the book's HTML as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "my_book/my_book/_build/html"
+
       # Deploy the book's HTML to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
